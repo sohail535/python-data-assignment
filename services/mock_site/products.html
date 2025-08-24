@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><title>Mock Products</title></head>
+<body>
+  <h1>Mock Products</h1>
+  <ul id="list"></ul>
+  <div id="status">Loading more…</div>
+  <script>
+    const list = document.getElementById('list');
+    const status = document.getElementById('status');
+    function addItem(p) {
+      const li = document.createElement('li');
+      li.innerText = `${p.product_id} | ${p.name} | ${p.category} | $${p.price}`;
+      list.appendChild(li);
+    }
+    fetch('data/page2.json').then(r => r.json()).then(items => {
+      setTimeout(() => { items.forEach(addItem); status.innerText = 'Done'; }, 1000);
+    });
+  </script>
+</body>
+</html>

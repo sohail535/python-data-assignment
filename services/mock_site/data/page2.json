@@ -1,0 +1,90 @@
+[
+  {
+    "product_id": "P0011",
+    "name": "Nova Kettle",
+    "category": "toys",
+    "price": 146.1,
+    "currency": "USD",
+    "rating": 4.3,
+    "in_stock": true,
+    "source": "seed",
+    "last_updated": "2024-06-05T12:55:00Z"
+  },
+  {
+    "product_id": "P0012",
+    "name": "Cosmos Camera",
+    "category": "electronics",
+    "price": 216.1,
+    "currency": "USD",
+    "rating": 4.8,
+    "in_stock": true,
+    "source": "seed",
+    "last_updated": "2024-06-06T13:00:00Z"
+  },
+  {
+    "product_id": "P0013",
+    "name": "Horizon Tripod",
+    "category": "books",
+    "price": 220.16,
+    "currency": "USD",
+    "rating": 3.9,
+    "in_stock": true,
+    "source": "seed",
+    "last_updated": "2024-06-07T13:05:00Z"
+  },
+  {
+    "product_id": "P0014",
+    "name": "Echo Earbuds",
+    "category": "kitchen",
+    "price": 263.87,
+    "currency": "USD",
+    "rating": 2.7,
+    "in_stock": true,
+    "source": "seed",
+    "last_updated": "2024-06-01T13:10:00Z"
+  },
+  {
+    "product_id": "P0015",
+    "name": "Gravity Scale",
+    "category": "toys",
+    "price": 152.52,
+    "currency": "USD",
+    "rating": 3.1,
+    "in_stock": false,
+    "source": "seed",
+    "last_updated": "2024-06-02T13:15:00Z"
+  },
+  {
+    "product_id": "P0016",
+    "name": "Spectra Glasses",
+    "category": "electronics",
+    "price": 135.49,
+    "currency": "USD",
+    "rating": 4.1,
+    "in_stock": true,
+    "source": "seed",
+    "last_updated": "2024-06-03T13:20:00Z"
+  },
+  {
+    "product_id": "P0017",
+    "name": "Vertex Vacuum",
+    "category": "books",
+    "price": 131.13,
+    "currency": "USD",
+    "rating": 4.6,
+    "in_stock": false,
+    "source": "seed",
+    "last_updated": "2024-06-04T13:25:00Z"
+  },
+  {
+    "product_id": "P0018",
+    "name": "Photon Flashlight",
+    "category": "kitchen",
+    "price": 110.76,
+    "currency": "USD",
+    "rating": 4.0,
+    "in_stock": false,
+    "source": "seed",
+    "last_updated": "2024-06-05T13:30:00Z"
+  }
+]

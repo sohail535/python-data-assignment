@@ -1,0 +1,23 @@
+product_id,name,category,price,currency,rating,in_stock,source,last_updated
+P0001,Nebula Speaker,books,78.01,USD,3.9,True,seed,2024-06-02T12:05:00Z
+P0002,Orion Blender,kitchen,274.62,USD,3.7,False,seed,2024-06-03T12:10:00Z
+P0003,Luna Lamp,toys,28.0,USD,2.5,True,seed,2024-06-04T12:15:00Z
+P0004,Quasar Mixer,electronics,84.21,USD,3.1,False,seed,2024-06-05T12:20:00Z
+P0005,Comet Mug,books,145.38,USD,4.6,True,seed,2024-06-06T12:25:00Z
+P0006,Pulsar Toaster,kitchen,124.17,USD,4.7,True,seed,2024-06-07T12:30:00Z
+P0007,Zenith Knife Set,toys,193.11,USD,4.7,False,seed,2024-06-01T12:35:00Z
+P0008,Atlas Cookbook,electronics,122.08,USD,2.5,True,seed,2024-06-02T12:40:00Z
+P0009,Voyager Charger,books,55.23,USD,4.9,True,seed,2024-06-03T12:45:00Z
+P0010,Apollo Notebook,kitchen,96.37,USD,2.6,True,seed,2024-06-04T12:50:00Z
+P0011,Nova Kettle,toys,146.1,USD,4.3,True,seed,2024-06-05T12:55:00Z
+P0012,Cosmos Camera,electronics,216.1,USD,4.8,True,seed,2024-06-06T13:00:00Z
+P0013,Horizon Tripod,books,220.16,USD,3.9,True,seed,2024-06-07T13:05:00Z
+P0014,Echo Earbuds,kitchen,263.87,USD,2.7,True,seed,2024-06-01T13:10:00Z
+P0015,Gravity Scale,toys,152.52,USD,3.1,False,seed,2024-06-02T13:15:00Z
+P0016,Spectra Glasses,electronics,135.49,USD,4.1,True,seed,2024-06-03T13:20:00Z
+P0017,Vertex Vacuum,books,131.13,USD,4.6,False,seed,2024-06-04T13:25:00Z
+P0018,Photon Flashlight,kitchen,110.76,USD,4.0,False,seed,2024-06-05T13:30:00Z
+P0019,Nimbus Fan,toys,76.39,USD,3.3,True,seed,2024-06-06T13:35:00Z
+P0020,Helix Keyboard,electronics,257.36,USD,5.0,False,seed,2024-06-07T13:40:00Z
+P0005,Comet Mug,books,159.92,USD,4.2,True,seed,2024-07-01T12:00:00Z
+P0010,Apollo Notebook,kitchen,106.01,USD,4.8,False,seed,2024-07-01T12:00:00Z

@@ -1,0 +1,15 @@
+app:
+  project_name: "Senior Python DE - Stubs"
+  environment: "local"
+
+database:
+  postgres:
+    host: "${PGHOST:-localhost}"
+    port: ${PGPORT:-5432}
+    db: "${PGDATABASE:-assignment}"
+    user: "${PGUSER:-assignment}"
+    password: "${PGPASSWORD:-assignment}"
+
+api:
+  base_url: "${API_BASE_URL:-http://localhost:8000}"
+  page_size: 10
