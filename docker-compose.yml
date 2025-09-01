@@ -1,0 +1,101 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: products
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mock_api:
+    build:
+      context: .
+      dockerfile: services/mock_api/Dockerfile
+    ports:
+      - "5050:5050"
+    environment:
+      DATA_DIR: /app/data/raw
+      DATA_FILE: products.json
+      RATE_LIMIT_EVERY_N: 7
+      RETRY_AFTER_SECONDS: 2
+    volumes:
+      - ./data:/app/data
+      - ./services/mock_api:/app
+    command: [ "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5050", "--reload" ]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  mock_website:
+    build:
+      context: .
+      dockerfile: services/mock_site/Dockerfile
+    ports:
+      - "8080:80"
+
+  migrations:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: products
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PYTHONPATH: /app
+    volumes:
+      - .:/app
+    command: python scripts/manage_db.py upgrade
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # Database configuration
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: products
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+      # Service URLs
+      API_BASE_URL: http://mock_api:5050
+      WEBSITE_URL: http://mock_website:80
+
+      # Scraper configuration
+      SCRAPER_WAIT_TIMEOUT: 30
+      SCRAPER_DYNAMIC_WAIT: 5
+
+      # Spark configuration
+      SPARK_MASTER: local[*]
+      SPARK_EXECUTOR_MEMORY: 2g
+      SPARK_DRIVER_MEMORY: 2g
+
+      # Python development mode
+      PYTHONUNBUFFERED: 1
+      PYTHONPATH: /app
+    volumes:
+      - .:/app
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
+      mock_api:
+        condition: service_started
+      mock_website:
+        condition: service_started
+
+volumes:
+  postgres_data:
