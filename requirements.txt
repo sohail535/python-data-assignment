@@ -48,3 +48,4 @@ mypy==1.8.0  # For static type checking
 types-requests==2.31.0.10
 types-PyYAML==6.0.12.11
 types-beautifulsoup4==4.12.0.7
+pyarrow-stubs==21.0.0  # Type stubs matching our pyarrow version
